@@ -87,6 +87,7 @@ router.get('/post/:id', (req, res) => {
     });
 });
 
+// Once logged in redirects to the homepage
 router.get('/login', (req, res) => {
   if (req.session.loggedIn) {
     res.redirect('/');

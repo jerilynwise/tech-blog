@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { User, Post, Comment } = require('../../models');
 
-// get all users
+// gets all users
 router.get('/', (req, res) => {
   User.findAll({
     attributes: { exclude: ['password'] }
@@ -13,6 +13,7 @@ router.get('/', (req, res) => {
     });
 });
 
+// gets a user by there id
 router.get('/:id', (req, res) => {
   User.findOne({
     attributes: { exclude: ['password'] },
@@ -47,6 +48,8 @@ router.get('/:id', (req, res) => {
     });
 });
 
+
+// creates a new user following parameters provided
 router.post('/', (req, res) => {
   // expects {username: 'Lernantino', email: 'lernantino@gmail.com', password: 'password1234'}
   User.create({
@@ -69,6 +72,7 @@ router.post('/', (req, res) => {
     });
 });
 
+// allows user to login based off their username and password
 router.post('/login', (req, res) => {
   // expects {email: 'lernantino@gmail.com', password: 'password1234'}
   User.findOne({
@@ -98,6 +102,7 @@ router.post('/login', (req, res) => {
   });
 });
 
+// ends the users session
 router.post('/logout', (req, res) => {
   if (req.session.loggedIn) {
     req.session.destroy(() => {
@@ -109,6 +114,7 @@ router.post('/logout', (req, res) => {
   }
 });
 
+// Updates the user based off what the user updates ie:password or email
 router.put('/:id', (req, res) => {
   // expects {username: 'Lernantino', email: 'lernantino@gmail.com', password: 'password1234'}
 
@@ -132,6 +138,7 @@ router.put('/:id', (req, res) => {
     });
 });
 
+// deletes the user
 router.delete('/:id', (req, res) => {
   User.destroy({
     where: {

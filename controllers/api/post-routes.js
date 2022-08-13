@@ -35,6 +35,7 @@ router.get('/', (req, res) => {
     });
 });
 
+// gets a post by its id
 router.get('/:id', (req, res) => {
   Post.findOne({
     where: {
@@ -74,6 +75,7 @@ router.get('/:id', (req, res) => {
     });
 });
 
+// creates a new post
 router.post('/', withAuth, (req, res) => {
   // expects {title: 'This is a blog post!', post_text: 'Posting 1,2,3', user_id: 1}
   Post.create({
@@ -88,7 +90,7 @@ router.post('/', withAuth, (req, res) => {
     });
 });
 
-
+// updates a post
 router.put('/:id', withAuth, (req, res) => {
   Post.update(
     {
@@ -113,6 +115,7 @@ router.put('/:id', withAuth, (req, res) => {
     });
 });
 
+// deletes a post
 router.delete('/:id', withAuth, (req, res) => {
   console.log('id', req.params.id);
   Post.destroy({
