@@ -1,7 +1,7 @@
 # Tech Blog
   ## Description
 
-  Tech blog deployed to Heroku. This website uses Encrypt to keep passwords safe and SQL database to hold posts/comments/ users. Please check out the deployed website: ![Tech-Blog]( https://nameless-cove-30065.herokuapp.com/)</br>
+  Tech blog deployed to Heroku. This website uses Encrypt to keep passwords safe and SQL database to hold posts/comments/ users. Please check out the deployed website: ( https://nameless-cove-30065.herokuapp.com/)</br>
   ![Untitled_ Aug 13, 2022 1_36 PM](https://user-images.githubusercontent.com/102970872/184506859-254175b6-2bc3-4e67-9cc8-c7e9c89fca00.gif)
   </br>
   
